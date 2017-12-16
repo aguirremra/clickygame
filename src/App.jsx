@@ -22,11 +22,11 @@ class App extends Component {
 	}
 
 	handleShuffle(id){
-		if(this.state.isClicked.length === 8){
+		if(this.state.isClicked.length === 11){
 			this.setState({
 				score: 0,
 				confirm: "You are a winner!",
-				highScore: 9
+				highScore: 12
 			});
 			return;
 		}
@@ -41,7 +41,7 @@ class App extends Component {
 
 			this.setState({
 				score: 0,
-				confirm: "Whoops, that sucks!",
+				confirm: "Whoops, you clicked that already!!",
 				isClicked: clicked,
 				highScore: maxScore
 			});
@@ -55,7 +55,7 @@ class App extends Component {
 				score: score,
 				images: this.shuffleImages(),
 				isClicked: clicked,
-				confirm: "Wow, you are awesome!",
+				confirm: "Awesome, you got that right!",
 				highScore: maxScore
 			});
 		}
@@ -76,9 +76,9 @@ class App extends Component {
 	imageRender(){
 		return this.state.images.map(image => {
 			return (
-
-					<img className="panel" src={image.image} alt={image.id} onClick={() => this.handleShuffle(image.id)}/>
-
+				<div className="click-item">
+					<img className="" src={image.image} alt={image.id} onClick={() => this.handleShuffle(image.id)}/>
+				</div>
 			);
 		})
 	}
@@ -92,18 +92,18 @@ class App extends Component {
   render() {
     return (
 		<div id="container">
-			<div id="header" className="row header">
+			<div id="header" className="navbar navbar-default navbar-fixed-top">
 			  <div className="brand col-sm-4">
-			  	<a className="brand" href="/">Clicky</a>
+			  	<a className="brand" href="">Clicky</a>
 			  </div>
 			  <div className="col-sm-4">{this.state.confirm}</div>
-			  <div className="col-sm-4">Score: {this.state.score} |   High Score: {this.state.highScore} </div>
+			  <div className="col-sm-4">Score: {this.state.score}     |   High Score: {this.state.highScore} </div>
 			</div>
 			<div id="subhead" className="jumbotron">
-				<span>Click an image to earn points. Don't click on the same image twice!!!</span>			
+				<span>Don't click on the same image twice!!!</span>			
 			</div>
 			<div className="container">
-				<div>{this.imageRender()}</div>				
+				<div>{this.imageRender()}</div>			
 			</div>
 		</div>
     );

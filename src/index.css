@@ -5,29 +5,50 @@ body {
   text-align: center;
 }
 #header{
-	background-color: black;
+	background-color: #8B1982;
 	margin: 0px;
-	padding-top: 20px;
+	padding-top: 15px;
 	color: white;
-	font-size: 25px;
-	height: 75px;
-	border-bottom: 3px solid blue;
+	font-size: 30px;
+	height: 85px;
+	border-bottom: 2px solid blue;
 }
 .brand{
 	color: white;
 	font-weight: bolder;
+	font-size: 40px;
+	margin-top: 0px;
 }
 #subhead{
-  background-color: pink;
-  font-size: 30px;
+	background-image: url("background.jpg");
+  font-size: 25px;
+  margin-top: 75px;
 }
 span{
 	display: inline-block;
   vertical-align: middle;
   line-height: normal;
+  color: blue;
 }
-img{
-	border: 2px solid white;
-	padding: 10px;	
+
+img:hover{
+	box-shadow: 5px 6px 7px rgba(0, 0, 0, .5);
+}
+
+.click-item {
+/*		float: left;*/
+		display: inline-block;
+		width: 30%; 
+    background-size: cover;
+    background-position: 50%;
+    height: 210px;
+    width: 210px;
+    margin: 10px 10px;
+    border: 5px solid #f1f1f1;
+    border-radius: 3px;
+    box-shadow: 0 3px 6px rgba(0,0,0,.16), 0 3px 6px rgba(0,0,0,.23);
+    cursor: pointer;
+}
+.container{
 
 }
